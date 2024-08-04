@@ -1,0 +1,51 @@
+<MyGrid>:
+    id: pass
+    display: input
+    canvas:
+        Color:
+            rgba: 0.1, 0.1, 0.1, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+        padding: 100
+        spacing: 50
+
+        Label:
+            text: "PASSWORD GENERATOR"
+            font_name: 'Times'
+            font_size: "35sp" 
+            spacing: 50
+
+        GridLayout:
+            cols:2
+            spacing: 100
+
+            Label:
+                text: "ENETR PASSWORD LENTGH"
+                font_name: 'Times'
+                font_size: '15sp'
+                halign: 'left'
+                size_hint: (0.2, None)
+                height: 50
+
+            TextInput:
+                id: input
+                hint_text: 'Less Than Equal To 30'
+                font_name: 'Times'
+                multiline: False
+                font_size: '15sp'
+                size_hint: (0.25, None)
+                height: 50
+
+        Button:
+            text: 'GENERATE'
+            font_name: 'Times'
+            background_color: 0.75, 0.75, 0.75, 1
+            font_size: '20sp'
+            size_hint: (1, None)
+            height: 30
+            on_press: root.PasswordGen(input.text)
